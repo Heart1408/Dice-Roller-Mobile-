@@ -28,18 +28,25 @@ class MainActivity : AppCompatActivity() {
         val rollResult = myFirstDice.roll()
         val luckyNumber = 4
 
-        if (rollResult == luckyNumber) {
-            resultTextView.text = "You win!"
-        } else if (rollResult == 1) {
-            resultTextView.text = "So sorry! You rolled a 1. Try again!"
-        } else if (rollResult == 2) {
-            resultTextView.text = "Sadly, you rolled a 2. Try again!"
-        } else if (rollResult == 3) {
-            resultTextView.text = "Unfortunately, you rolled a 3. Try again!"
-        } else if (rollResult == 5) {
-            resultTextView.text = "Don't cry! You rolled a 5. Try again!"
-        } else {
-            resultTextView.text = "Apologies! You rolled a 6. Try again!"
+        when (rollResult) {
+            luckyNumber -> {
+                resultTextView.text = "You won!"
+            }
+            1 -> {
+                resultTextView.text = "So sorry! You rolled a 1. Try again!"
+            }
+            2 -> {
+                resultTextView.text = "Sadly, you rolled a 2. Try again!"
+            }
+            3 -> {
+                resultTextView.text = "Unfortunately, you rolled a 3. Try again!"
+            }
+            5 -> {
+                resultTextView.text = "Don't cry! You rolled a 5. Try again!"
+            }
+            6 -> {
+                resultTextView.text = "Apologies! You rolled a 6. Try again!"
+            }
         }
     }
 }
